@@ -32,6 +32,14 @@
     overflow-y: scroll;
 }
 
+.transaction_box>div::-webkit-scrollbar {
+    display: none;
+}
+
+.transaction_box>div:hover {
+    cursor: grab;
+}
+
 
 .transaction_box > div > div {
     display: flex;

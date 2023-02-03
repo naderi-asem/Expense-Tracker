@@ -3,19 +3,49 @@ import trStyle from '../TransactionsComponent/trStyle.module.css';
 
 const TransactionsComponent = ({ transactions }) => {
 
-    console.log("transactions: ", transactions);
-
+    // main states
     const [userSearch, setUserSearch] = React.useState("");
-
     const [trFiltered, setTrFiltered] = React.useState([...transactions]);
 
-    const searchBoxRef = React.useRef();
+    // transactions scroll states
+    const [scrollValues, setScrollValues] = React.useState({ mouseDown: false, startY: 0, scrollTop: 0 });
 
+    // other functions
+    const startGrabbing = (e) => {
+        grabRef.current.style.cursor = "grabbing";
+        setScrollValues(
+            {
+                mouseDown: !scrollValues.mouseDown,
+                startY: e.pageY - grabRef.current.offsetTop,
+                scrollTop: grabRef.current.scrollTop
+            }
+        );
+    }
+
+    const stopGrabbing = () => {
+        grabRef.current.style.cursor = "grab";
+        setScrollValues({ ...scrollValues, mouseDown: !scrollValues.mouseDown });
+    }
+
+    const mouseMoveHandler = (e) => {
+        e.preventDefault();
+        if (!scrollValues.mouseDown) return;
+        const Y = e.pageY - grabRef.current.offsetTop;
+        const scroll = Y - scrollValues.startY;
+        grabRef.current.scrollTop = scrollValues.scrollTop - scroll;
+    }
+
+
+    // elements that got by useRef
+    const searchBoxRef = React.useRef();
+    const grabRef = React.useRef()
+
+    // life cycles
     React.useEffect(() => {
         setTrFiltered(transactions);
     }, [transactions]);
 
-
+    // event handlers
     const searchHandler = (e) => {
         const input = e.target.value.toLowerCase();
         setUserSearch(input);
@@ -36,6 +66,22 @@ const TransactionsComponent = ({ transactions }) => {
         setTrFiltered(searched);
     }
 
+    // const mouseDownHandler = (e) => {
+    //     grabRef.current.scrollTop += 180;
+    //     grabRef.current.style.cursor = "grabbing";
+    //     grabbingScrollHandler(e)
+
+    // }
+
+    // const mouseUpHandler = (e) => {
+    //     grabRef.current.style.cursor = "grab";
+    // }
+
+    // const grabbingScrollHandler = (e) => {
+    //     console.log(e);
+    //     grabRef.current.scrollTop -= e.clientY;
+    // }
+
 
     return (
         <section className={trStyle.transaction_box} >
@@ -52,7 +98,13 @@ const TransactionsComponent = ({ transactions }) => {
                     : <p>add some transaction...</p>
 
             }
-            <div>
+            <div
+                ref={grabRef}
+                onMouseDown={(e) => startGrabbing(e)}
+                onMouseUp={stopGrabbing}
+                onMouseLeave={stopGrabbing}
+                onMouseMove={(e) => mouseMoveHandler(e)}
+            >
                 {trFiltered.map(transaction => {
                     return <div
                         key={transaction.id}
