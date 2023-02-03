@@ -15,7 +15,7 @@ const TransactionsComponent = ({ transactions }) => {
         grabRef.current.style.cursor = "grabbing";
         setScrollValues(
             {
-                mouseDown: !scrollValues.mouseDown,
+                mouseDown: true,
                 startY: e.pageY - grabRef.current.offsetTop,
                 scrollTop: grabRef.current.scrollTop
             }
@@ -24,7 +24,7 @@ const TransactionsComponent = ({ transactions }) => {
 
     const stopGrabbing = () => {
         grabRef.current.style.cursor = "grab";
-        setScrollValues({ ...scrollValues, mouseDown: !scrollValues.mouseDown });
+        setScrollValues({ ...scrollValues, mouseDown: false });
     }
 
     const mouseMoveHandler = (e) => {
