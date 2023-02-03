@@ -57,7 +57,7 @@
 .transaction_form>div {
     display: flex;
     flex-wrap: wrap;
-    width: 18vw;
+    width: 22vw;
     justify-content: space-between;
     overflow-wrap: break-word;
     column-gap: 6px;
