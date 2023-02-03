@@ -1,0 +1,93 @@
+.overView {
+    padding-bottom: 10px;
+}
+
+.overView>div {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 16px;
+    align-items: center;
+}
+
+.overView>div:first-child>p {
+   border: 2px solid; 
+   padding: 12px 18px;
+   border-radius: 7px;
+}
+
+.negative {
+    color: tomato;
+}
+.positive {
+    color: springgreen;
+}
+
+.overView button {
+    border: none;
+    background-color: #E9C118;
+    padding: 6px 16px;
+    color: #322A59;
+    font-weight: 600;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    transition: background-color 0.3s linear, color 0.5s ease-in-out;
+    box-shadow: 2px 2px 2px #000000;
+}
+
+.transaction_form {
+    margin: 0 auto;
+    /* width: 70vw; */
+    display: flex;
+    flex-direction: column;
+    row-gap: 12px;
+    padding: 16px;
+}
+
+.transaction_form>input {
+    border: none;
+    outline: none;
+    border-radius: 7px;
+    padding: 8px 6px;
+}
+
+.transaction_form>input:focus {
+    box-shadow: 0 0 3px 3px #E9C118;
+}
+
+.transaction_form>div {
+    display: flex;
+    flex-wrap: wrap;
+    width: 18vw;
+    justify-content: space-between;
+    overflow-wrap: break-word;
+    column-gap: 6px;
+}
+
+.overView>div:last-child {
+    /* border-bottom: 1px solid; */
+    /* width: 68vw; */
+    margin: 10px auto;
+    padding: 10px;
+    gap: 8px 10px;
+    flex-wrap: wrap;
+}
+
+.overView>div:last-child> p.expense {
+    padding: 16px 8px;
+    border: 1px solid tomato;
+    color: tomato;
+    border-radius: 7px;
+}
+
+.overView>div:last-child> p.income {
+    padding: 16px 8px;
+    border: 1px solid springgreen;
+    color: springgreen;
+    border-radius: 7px;
+}
+
+.cancel_btn {
+    background-color: tomato !important;
+    color: #000000 !important;
+    text-shadow: -1px 0px 1px #ffffff;
+}

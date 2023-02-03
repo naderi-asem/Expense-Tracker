@@ -1,0 +1,62 @@
+.transaction_box {
+    margin: 12px 0;
+    padding-right: 16px;
+    padding-left: 16px;
+    flex-grow: 1;
+    flex-shrink: 1;
+    /* width: 70vw; */
+    /* padding: 16px; */
+}
+
+.transaction_box>h3 {
+    padding-bottom: 6px;
+    border-bottom: 2px solid;
+    margin: 0 auto 16px auto;
+    /* width: 45vw; */
+    text-shadow: 0 0 3px #000;
+    /* margin-bottom: 16px; */
+}
+
+.transaction_box> input {
+    border: none;
+    padding: 8px 6px;
+    outline: none;
+    border-radius: 7px;
+    width: 100%;
+}
+
+.transaction_box > div  {
+    margin-top: 16px;
+    /* padding-top: 8px; */
+    height:65vh;
+    overflow-y: scroll;
+}
+
+
+.transaction_box > div > div {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 6px 12px;
+    margin-top: 8px;
+    word-wrap: break-word;
+    word-break: break-all;
+}
+
+.income {
+    border: 2px solid springgreen;
+    border-radius: 7px;
+}
+
+.income> p {
+    color: springgreen;
+}
+
+.expense {
+    border: 2px solid tomato;
+    border-radius: 7px;
+}
+
+.expense> p {
+    color: tomato;
+}
