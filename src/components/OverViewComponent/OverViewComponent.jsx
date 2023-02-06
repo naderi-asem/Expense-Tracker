@@ -26,15 +26,17 @@ const OverViewComponent = ({ income, expense, onAddTransaction }) => {
     return (
         <section className={OVC_style.overView}>
             <div>
-                <p className={(balance < 0 && OVC_style.negative) || OVC_style.positive }>
+                <p className={(balance < 0 && OVC_style.negative) || OVC_style.positive}>
                     balance: {balance} $
                 </p>
-                <button
-                    className={`${isShow && OVC_style.cancel_btn}`}
-                    onClick={() => setIsShow(prevState => !prevState)}
-                >
-                    {(isShow && "Cancel") || "Add"}
-                </button>
+                <div>
+                    <button
+                        className={`${isShow && OVC_style.cancel_btn}`}
+                        onClick={() => setIsShow(prevState => !prevState)}
+                    >
+                        {(isShow && "Cancel") || "Add"}
+                    </button>
+                </div>
             </div>
             {
                 isShow && <form

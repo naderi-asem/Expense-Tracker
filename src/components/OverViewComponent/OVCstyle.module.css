@@ -18,14 +18,23 @@
 .negative {
     color: tomato;
 }
+
 .positive {
-    color: springgreen;
+    color: #E9C118;
+}
+
+.overView>div:first-child>div {
+    width: 7rem;
+}
+
+.overView>div:first-child>div>button {
+    width: inherit;
 }
 
 .overView button {
     border: none;
     background-color: #E9C118;
-    padding: 6px 16px;
+    padding: 16px;
     color: #322A59;
     font-weight: 600;
     border-radius: 0.5rem;
@@ -47,7 +56,8 @@
     border: none;
     outline: none;
     border-radius: 7px;
-    padding: 8px 6px;
+    padding: 12px 6px;
+    height: 50px;
 }
 
 .transaction_form>input:focus {
@@ -81,8 +91,8 @@
 
 .overView>div:last-child> p.income {
     padding: 16px 8px;
-    border: 1px solid springgreen;
-    color: springgreen;
+    border: 1px solid #E9C118;
+    color: #E9C118;
     border-radius: 7px;
 }
 

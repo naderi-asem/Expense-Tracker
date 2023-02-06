@@ -23,6 +23,7 @@
     outline: none;
     border-radius: 7px;
     width: 100%;
+    height: 50px;
 }
 
 .transaction_box > div  {
@@ -45,6 +46,7 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
+    align-items: center;
     padding: 6px 12px;
     margin-top: 8px;
     word-wrap: break-word;
@@ -52,17 +54,19 @@
 }
 
 .income {
-    border: 2px solid springgreen;
+    border: 2px solid #E9C118;
     border-radius: 7px;
+    height: 60px;
 }
 
 .income> p {
-    color: springgreen;
+    color: #E9C118;
 }
 
 .expense {
     border: 2px solid tomato;
     border-radius: 7px;
+    height: 60px;
 }
 
 .expense> p {
